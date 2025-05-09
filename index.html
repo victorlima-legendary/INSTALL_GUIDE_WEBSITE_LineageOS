@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LineageOS Install Tutorial</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- LINK CSS ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      @media only screen and (max-width: 550px) {
+        .lineage-tutorial-content {
+          width: 100%;
+        }
+        picture img {
+          width: 500px;
+        }
+      }
+
+      .terminal {
+        background-color: #1e1e1e;
+        color: #d4d4d4;
+        padding: 15px;
+        border-radius: 8px;
+        font-family: monospace;
+        position: relative;
+        margin-bottom: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        /* white-space: nowrap; */
+        /* overflow: hidden; */
+      }
+
+      .copy-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #444;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9em;
+      }
+
+      .copy-button:hover {
+        background: #666;
+      }
+
+      #command {
+        overflow: hidden;
+        font-size: clamp(12px, 2vw, 20px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lineage-tutorial-content">
+      <div class="lineage-image">
+        <picture>
+          <source
+            media="(max-width: 520px)"
+            width="auto"
+            height="200px"
+            srcset="./assets/image.png"
+          />
+          <!--  -->
+          <img width="100%" src="./assets/image.png" alt="Lineage Banner" />
+        </picture>
+      </div>
+      <div class="tutorial-lineage">
+        <div class="top">
+          <h1>LineageOS tutorial for moto g82 device:</h1>
+          <div class="social-medias">
+            <a target="_blank" href="#" id="social"
+              ><img src="./assets/4a2cac64-a0df-444c-a77a-248035bb9e7e.jpeg"
+            /></a>
+            <a target="_blank" href="#" id="social"
+              ><img src="./assets/5b068d74-5901-4785-98ae-76150b61a004.jpeg"
+            /></a>
+            <br />
+          </div>
+          <div class="thanks">
+            <span
+              >Created by Victor Lima | @victorlimalegendary2 | 05/09/2025</span
+            >
+            <br />
+            <span>Thanks Anand and Vishuu for the content!!</span>
+          </div>
+        </div>
+        <!--  -->
+        <div id="tutorial">
+          <div id="sections" class="what-i-need">
+            <h2>What do you need to continue?</h2>
+            <ul>
+              <li>
+                Your device unlocked, if you don't unlock yet, follow this
+                tutorial;&nbsp;
+                <a
+                  target="_blank"
+                  href="https://en-us.support.motorola.com/app/standalone/bootloader/unlock-your-device-a"
+                  >click here</a
+                >
+              </li>
+              <li>
+                Platform Tools downloaded in your computer;&nbsp;
+                <a
+                  target="_blank"
+                  href="https://developer.android.com/tools/releases/platform-tools?hl=pt-br"
+                  >click here</a
+                >
+              </li>
+              <li>
+                Motorola USB drivers installed in your computer;&nbsp;
+                <a
+                  target="_blank"
+                  href="https://pt-br.support.motorola.com/app/usb-drivers"
+                  >click here</a
+                >
+              </li>
+            </ul>
+            <!--  -->
+            <div class="code">
+              <h3 style="letter-spacing: 0px; font-weight: 100">
+                If you using <span style="color: green">Linux</span> you need to
+                install fastboot packages:
+              </h3>
+              <span
+                >install adb packages for linux users (if you are on windows,
+                skip this):</span
+              >
+              <div class="terminal">
+                <button class="copy-button" onclick="copyToClipboard()">
+                  Copy
+                </button>
+                <code id="command"
+                  >sudo apt update && sudo apt install adb fastboot</code
+                >
+              </div>
+            </div>
+            <div class="fastboot">
+              <div class="code">
+                <span
+                  >Connect your device in fastboot mode, and try this
+                  command:</span
+                >
+                <div class="terminal">
+                  <button class="copy-button" onclick="copyToClipboard2()">
+                    Copy
+                  </button>
+                  <code id="command2">fastboot devices</code>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div id="sections" class="step-by-step">
+            <h2>STEP-BY-STEP TO INSTALL LINEAGEOS ON MOTO G82 5G:</h2>
+            <div id="tutorial">
+              <ul>
+                <li>
+                  DOWNLOAD PLATFORM TOOLS AND EXTRACT, LATER OPEN A TERMINAL
+                  INSIDE THIS FOLDER.
+                </li>
+                <li>
+                  FIRST YOU NEED TO INSTALL ADB AOSP RECOVERY;&nbsp;
+                  <a target="_blank" href="https://t.me/c/2677744671/2"
+                    >click here</a
+                  >
+                </li>
+              </ul>
+              <div id="fastboot">
+                <span
+                  >STEP-BY-STEP TO INSTALL ADB RECOVERY FILES ON THE
+                  DEVICE:</span
+                >
+                <div class="code">
+                  <div class="terminal">
+                    <button class="copy-button" onclick="copyToClipboard3()">
+                      Copy
+                    </button>
+                    <code style="white-space: normal" id="command3"
+                      >fastboot flash vendor_boot vendor_boot.img && fastboot
+                      flash boot boot.img && fastboot flash dtbo dtbo.img</code
+                    >
+                  </div>
+                </div>
+                <br />
+                <span>Later reboot device into recovery mode.</span>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div
+            style="
+              border-top: 1px solid gray;
+              border-bottom: 1px solid gray;
+              padding: 20px;
+            "
+            class="install-custom-rom"
+          >
+            <h3>INSTALL DOWNLOADED CUSTOM ROM FILE:</h3>
+            <span>- All image here is from Vishuu</span>
+            <div class="content-step-by-step">
+              <ul>
+                <li>
+                  In the recovery, select <q>factory reset</q> and later
+                  <q>format data.</q>
+                </li>
+                <div>
+                  <img src="./assets/6120491769222250217.jpg" width="300px" />
+                </div>
+                <li>
+                  Return to inicial recovery screen and then select
+                  <q>Apply Update</q> and <q>Apply from ADB</q>
+                </li>
+                <div>
+                  <img src="./assets/6120491769222250218.jpg" width="300px" />
+                </div>
+                <li>
+                  Now, in the computer, move the ROM file into platform and
+                  execute this command in the command prompt:
+                  <br />
+                  <br />
+                  <div
+                    style="
+                      background: #343434;
+                      padding: 10px 20px;
+                      border-radius: 5px;
+                      margin: 0;
+                      line-height: 1;
+                    "
+                  >
+                    <span>adb sideload &nbsp;"Custom ROM directory"</span>
+                  </div>
+                </li>
+                <div>
+                  <img
+                    style="
+                      border-radius: 10px;
+                      border: 2px solid white;
+                      max-width: 900px;
+                    "
+                    width="100%"
+                    src="./assets/6120491769222250220.jpg"
+                    alt=""
+                  />
+                </div>
+                <li>
+                  Once the installation is complete, click <q>no</q> and return
+                  to the home recovery screen.
+                </li>
+                <div>
+                  <img src="./assets/6120491769222250221.jpg" width="300px" />
+                </div>
+                <li>
+                  Now, click on <q>factory reset</q> and <q>format data</q>
+                </li>
+                <div>
+                  <img src="./assets/6120491769222250222.jpg" width="300px" />
+                </div>
+                <div>
+                  <img src="./assets/6120491769222250225.jpg" width="300px" />
+                </div>
+                <li>
+                  Now you can boot the ROM. &nbsp;<span style="color: red"
+                    >Enjoy!!</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--  -->
+          <div id="sections">
+            <footer>
+              <span
+                style="
+                  white-space: nowrap;
+                  opacity: 0.8;
+                  letter-spacing: 1px;
+                  font-weight: 100;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 5px;
+                  font-size: clamp(5px, 2vw, 12px);
+                "
+                >Website Created By Victor Lima &nbsp;|
+                <img
+                  width="20px"
+                  style="border-radius: 30px"
+                  src="./assets/github.png"
+                />
+                GitHub:
+                <a
+                  target="_blank"
+                  href="https://github.com/victorlima-legendary"
+                  >victorlimalegendary</a
+                ></span
+              >
+            </footer>
+            <!--  -->
+            <a href="https://www.free-counters.org/">free-Counters.org</a>
+            <script
+              type="text/javascript"
+              src="https://www.freevisitorcounters.com/auth.php?id=cfef93176228c67fb045afe6bb8cb2b1b1f11f8f"
+            ></script>
+            <script
+              type="text/javascript"
+              src="https://www.freevisitorcounters.com/en/home/counter/1338328/t/2"
+            ></script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function copyToClipboard() {
+        const text = document.getElementById("command").innerText;
+
+        const tempInput = document.createElement("textarea");
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        tempInput.setSelectionRange(0, 99999);
+
+        try {
+          document.execCommand("copy");
+          alert("Comando copiado!");
+        } catch (err) {
+          alert("Erro ao copiar");
+        }
+
+        document.body.removeChild(tempInput);
+      }
+    </script>
+    <script>
+      function copyToClipboard2() {
+        const text = document.getElementById("command2").innerText;
+
+        const tempInput = document.createElement("textarea");
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        tempInput.setSelectionRange(0, 99999);
+
+        try {
+          document.execCommand("copy");
+          alert("Comando copiado!");
+        } catch (err) {
+          alert("Erro ao copiar");
+        }
+
+        document.body.removeChild(tempInput);
+      }
+    </script>
+    <script>
+      function copyToClipboard3() {
+        const text = document.getElementById("command3").innerText;
+
+        const tempInput = document.createElement("textarea");
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        tempInput.setSelectionRange(0, 99999);
+
+        try {
+          document.execCommand("copy");
+          alert("Comando copiado!");
+        } catch (err) {
+          alert("Erro ao copiar");
+        }
+
+        document.body.removeChild(tempInput);
+      }
+    </script>
+  </body>
+</html>
